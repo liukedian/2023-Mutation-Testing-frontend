@@ -29,7 +29,7 @@ const options = [
   <mySelect/>
   <div>
     <H2>请选择要使用的变异算子</H2>
-      <el-select v-model="loadFileParams" >
+      <el-select v-model="coursesU.type" >
         <el-option
             v-for="item in options"
             :key="item.value"
@@ -40,7 +40,7 @@ const options = [
   <el-upload
       drag
       :action="uploadFileURL"
-      :data="loadFileParams"
+      :data="coursesU"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       multiple>
@@ -48,13 +48,13 @@ const options = [
     <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
   </el-upload>
 
-  <el-button
-      size="large"
-      @click="submitUpload"
-      plain
-      color="rgb(1, 132, 127)"
-  >将信息上传到服务器
-  </el-button>
+<!--  <el-button-->
+<!--      size="large"-->
+<!--      @click="submitUpload"-->
+<!--      plain-->
+<!--      color="rgb(1, 132, 127)"-->
+<!--  >将信息上传到服务器-->
+<!--  </el-button>-->
 
 </template>
 
@@ -62,15 +62,13 @@ const options = [
 import mySelect from '../components/mySelect.vue'
 import axios from "axios";
 import {ElMessageBox} from "element-plus";
-import {ref} from "vue";
+
 
 export default {
   data() {
     return {
       uploadFileURL:"http://127.0.0.1:8080/user/register",
-      loadFileParams:ref(''),
-      coursesU: [],
-      type: [],
+      coursesU: {type:""},
     };
   },
 

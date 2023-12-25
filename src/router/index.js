@@ -1,13 +1,16 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 // 定义路由组件.
-import Home from "../views/Home.vue";
-
+import home from "../views/Home.vue";
+import show from "../views/myShow.vue";
+import mutation from "../views/myMutation.vue"
 
 // 定义一些路由
 // 每个路由都需要映射到一个组件。
 const routes = [
-    { path: "/", component: Home },
+    { path: "/", component: home },
+    {path :"/show",component: show},
+    {path :"/mutation",component: mutation},
 ];
 
 // 创建路由实例并传递 `routes` 配置

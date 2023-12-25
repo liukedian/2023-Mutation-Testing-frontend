@@ -21,13 +21,14 @@ const options = [
     label: 'UOI',
   },
 ]
+
 </script>
 <template>
-  <div id="title">
+  <div class="title">
     <H2>请选择要上传的文件格式</H2>
   </div>
   <mySelect/>
-  <div>
+  <div class="title">
     <H2>请选择要使用的变异算子</H2>
       <el-select v-model="coursesU.type" >
         <el-option
@@ -37,16 +38,20 @@ const options = [
             :value="item.value"/>
       </el-select>
   </div>
-  <el-upload
-      drag
-      :action="uploadFileURL"
-      :data="coursesU"
-      :on-preview="handlePreview"
-      :on-remove="handleRemove"
-      multiple>
-    <i class="el-icon-upload"></i>
-    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-  </el-upload>
+  <div class="title">
+    <el-upload
+        drag
+        :action="uploadFileURL"
+        :data="coursesU"
+        :on-preview="handlePreview"
+        :on-remove="handleRemove"
+        :on-success="uploadSuccess"
+        multiple>
+      <i class="el-icon-upload"></i>
+      <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+    </el-upload>
+  </div>
+
 
 <!--  <el-button-->
 <!--      size="large"-->
@@ -63,7 +68,6 @@ import mySelect from '../components/mySelect.vue'
 import axios from "axios";
 import {ElMessageBox} from "element-plus";
 
-
 export default {
   data() {
     return {
@@ -73,6 +77,10 @@ export default {
   },
 
   methods: {
+    uploadSuccess(response){
+      console.log(response);
+      localStorage.setItem("respData",response.data);
+    },
     submitUpload() {
         axios
             .post(this.uploadFileURL, this.loadFileParams)
@@ -100,7 +108,7 @@ export default {
 
 <style scoped>
 
-#title{
+.title{
   margin-top: 30px;
 }
 </style>

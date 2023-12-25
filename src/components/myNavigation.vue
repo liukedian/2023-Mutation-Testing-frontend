@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="title">
       <H1>变异测试框架/工具</H1>
     </div>
   <div class="h-6" />
@@ -12,8 +12,8 @@
       active-text-color="#ffd04b"
       @select="handleSelect"
   >
-    <el-menu-item index="1">上传文件</el-menu-item>
-    <el-menu-item index="2" >变异体查看</el-menu-item>
+    <el-menu-item index="">上传文件</el-menu-item>
+    <el-menu-item index="/show" >变异体查看</el-menu-item>
     <el-menu-item index="3">变异结果查看</el-menu-item>
   </el-menu>
 </template>
@@ -21,7 +21,6 @@
 <script setup>
 import { ref } from 'vue'
 const activeIndex2 = ref('1')
-
 
 </script>
 
@@ -32,5 +31,8 @@ export default {
 </script>
 
 <style scoped>
+#title{
+
+}
 
 </style>

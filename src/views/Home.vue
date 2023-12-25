@@ -21,7 +21,6 @@ const options = [
     label: 'UOI',
   },
 ]
-
 </script>
 <template>
   <div class="title">
@@ -30,7 +29,7 @@ const options = [
   <mySelect/>
   <div class="title">
     <H2>请选择要使用的变异算子</H2>
-      <el-select v-model="coursesU.type" >
+      <el-select v-model="extraData.type" >
         <el-option
             v-for="item in options"
             :key="item.value"
@@ -42,7 +41,7 @@ const options = [
     <el-upload
         drag
         :action="uploadFileURL"
-        :data="coursesU"
+        :data="extraData"
         :on-preview="handlePreview"
         :on-remove="handleRemove"
         :on-success="uploadSuccess"
@@ -51,7 +50,6 @@ const options = [
       <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
     </el-upload>
   </div>
-
 
 <!--  <el-button-->
 <!--      size="large"-->
@@ -72,7 +70,7 @@ export default {
   data() {
     return {
       uploadFileURL:"http://127.0.0.1:8080/user/register",
-      coursesU: {type:""},
+      extraData: {type:""},
     };
   },
 

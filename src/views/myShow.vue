@@ -7,7 +7,7 @@ export default {
   name: "myShow",
   data() {
     return {
-      respData:localStorage.getItem("respData")
+      respData:localStorage.getItem("mutationBody")
     };
   },
 }

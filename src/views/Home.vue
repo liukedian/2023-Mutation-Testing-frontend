@@ -77,7 +77,8 @@ export default {
   methods: {
     uploadSuccess(response){
       console.log(response);
-      localStorage.setItem("respData",response.data);
+      localStorage.setItem("mutationBody",response.mutationBody);
+      localStorage.setItem("testResult",response.testResult);
     },
     submitUpload() {
         axios

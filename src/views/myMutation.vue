@@ -1,10 +1,15 @@
 <template>
-<p>变异结果查看</p>
+<p>{{respData}}</p>
 </template>
 
 <script>
 export default {
-  name: "myMutation"
+  name: "myMutation",
+  data() {
+    return {
+      respData:localStorage.getItem("testResult")
+    };
+  },
 }
 </script>
 

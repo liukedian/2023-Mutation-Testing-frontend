@@ -69,7 +69,7 @@ import {ElMessageBox} from "element-plus";
 export default {
   data() {
     return {
-      uploadFileURL:"http://127.0.0.1:8080/user/register",
+      uploadFileURL:"http://127.0.0.1:7999/Upload/UpJava",
       extraData: {type:""},
     };
   },
@@ -77,8 +77,9 @@ export default {
   methods: {
     uploadSuccess(response){
       console.log(response);
-      localStorage.setItem("mutationBody",response.mutationBody);
-      localStorage.setItem("testResult",response.testResult);
+      localStorage.setItem("bodyLen",response.mutationBody.length);
+      localStorage.setItem('body',JSON.stringify(response.mutationBody));
+      localStorage.setItem("result",JSON.stringify(response.testResult));
     },
     submitUpload() {
         axios

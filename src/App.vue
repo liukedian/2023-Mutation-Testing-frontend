@@ -5,14 +5,12 @@
 
   <div class="navigation-container" >
     <div class="item-div">
-      <router-link to="/"  >上传文件</router-link>
+      <router-link to="/">上传文件</router-link>
     </div>
   <div class="item-div">
-    <router-link to="/show" > 变异体查看</router-link>
+    <router-link to="/show"> 变异结果查看</router-link>
   </div>
-  <div class="item-div">
-    <router-link to="/mutation" >变异结果查看</router-link>
-  </div>
+
 
   </div>
 
